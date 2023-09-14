@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)http://localhost:8000/rpt/test/ -->
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rental Property Toolkit - Test</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="/static/rpt/favicon.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <!-- email logo in footer -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0"
+    />
+
+    <!-- Bootstrap 5.3.1 -->
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    /> -->
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+
+    <!-- my custom CSS after -->
+    <link rel="stylesheet" href="./test2_files/style.css" />
+
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+      }
+    </style>
+
+    <script src="https://unpkg.com/htmx.org@1.9.3"></script>
+  </head>
+
+  <body class="" style="">
+    <div id="topbar">
+      <!--<div class="d-flex" style="background-image: linear-gradient(90deg, rgba(0, 0, 30, 0.5), rgba(8, 83, 156, 0.25)), url('/static/rpt/jaxpano-cool.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;">-->
+
+      <div
+        class="d-flex"
+        style="
+          background-image: linear-gradient(
+              90deg,
+              rgba(0, 0, 30, 0.85),
+              rgba(8, 83, 156, 0.6)
+            ),
+            url(&#39;./test2_files/jaxpano-cool.jpg&#39;);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        "
+      >
+        <div class="d-flex p-2 imgAbt float-left">
+          <img src="./test2_files/RPTlogo.png" style="width: 50%" />
+        </div>
+        <div class="d-flex p-2 align-self-center">
+          <h3
+            class="align-middle text-light"
+            style="vertical-align: middle; font-family: &#39;Lato&#39;, sans-serif;"
+          >
+            Rental Property<br />Toolkit
+          </h3>
+        </div>
+
+        <div
+          class="d-flex flex-grow-1 align-self-center"
+          style="vertical-align: middle; font-family: &#39;Lato&#39;, sans-serif;"
+        >
+          <div
+            class="card shadow me-3"
+            style="width: max-content; height: max-content; margin-left: auto"
+          >
+            <div class="card-body py-1">
+              <p class="card-text my-1" style="font-size: 1.2rem">
+                Sandbox Company_US_1
+              </p>
+              <p class="card-text my-1">
+                <img
+                  class="rounded-circle shadow-4-strong"
+                  width="25"
+                  src="./test2_files/2d98a57bdd9f8971abe2e1f3a982aa85.jpeg"
+                  alt="avatar of user"
+                />
+                murray@stokely.org
+              </p>
+              <a href="http://localhost:8000/rpt/logout" class="card-link"
+                >logout</a
+              >
+
+              |
+              <a href="http://localhost:8000/admin" class="card-link">admin</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- background image div -->
+    </div>
+    <!-- topbar -->
+
+    <nav
+      class="navbar navbar-expand-lg navbar-rpt border border-dark border-top-0 border-right-0 border-left-0"
+    >
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:8000/rpt/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link usespinner" href="http://localhost:8000/rpt/company/"
+            >Company</a
+          >
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link usespinner" href="http://localhost:8000/rpt/properties/"
+            >Properties</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link usespinner" href="http://localhost:8000/rpt/loans/">Loans</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link usespinner" href="http://localhost:8000/rpt/managers/"
+            >Managers</a
+          >
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="http://localhost:8000/rpt/test/#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            >Expenses</a
+          >
+          <div class="dropdown-menu">
+            <a
+              class="dropdown-item disabled"
+              href="http://localhost:8000/rpt/expenses/"
+              >Foo Expenses</a
+            >
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="http://localhost:8000/rpt/test/#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            >Reports</a
+          >
+          <div class="dropdown-menu">
+            <a
+              class="dropdown-item"
+              href="http://localhost:8000/rpt/reports/roi/"
+              >ROI</a
+            >
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="m-4">
+      <div class="body">
+        <h1>Navigation Tabs</h1>
+
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="home-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#home"
+              type="button"
+              role="tab"
+              aria-controls="home"
+              aria-selected="true"
+            >
+              <span class="text-rpt font-weight-bold">Session Details</span
+              ><br />
+              <span class="text-secondary" style="size=0.6rem;"
+                >View data stored in browser session</span
+              >
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="quickbooks-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#quickbooks"
+              type="button"
+              role="tab"
+              aria-controls="quickbooks"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              <span class="text-primary font-weight-bold">Django User</span
+              ><br />
+              <span class="text-secondary" style="size=0.6rem;"
+                >User Model</span
+              >
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="bulk-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#bulk"
+              type="button"
+              role="tab"
+              aria-controls="bulk"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              <span class="text-primary font-weight-bold">QBO AuthClient</span
+              ><br />
+              <span class="text-secondary" style="size=0.6rem;"
+                >Token Details</span
+              >
+            </button>
+          </li>
+
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="djangodebug-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#djangodebug"
+              type="button"
+              role="tab"
+              aria-controls="bulk"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              <span class="text-primary font-weight-bold">Django Debug</span
+              ><br />
+              <span class="text-secondary" style="size=0.6rem;"></span>
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div
+            class="tab-pane fade show active"
+            id="home"
+            role="tabpanel"
+            aria-labelledby="home-tab"
+          >
+            <div class="card card-body">
+              <table>
+                <tbody>
+                  <tr>
+                    <th>Session Expiry (seconds):</th>
+                    <td>1209600</td>
+                  </tr>
+
+                  <tr>
+                    <th>access_token</th>
+                    <td>---</td>
+                  </tr>
+
+                  <tr>
+                    <th>refresh_token</th>
+                    <td>---</td>
+                  </tr>
+
+                  <tr>
+                    <th>state</th>
+                    <td>--</td>
+                  </tr>
+
+                  <tr>
+                    <th>rpt_next</th>
+                    <td>--</td>
+                  </tr>
+
+                  <tr>
+                    <th>realm_id</th>
+                    <td>123145921411639</td>
+                  </tr>
+
+                  <tr>
+                    <th>id_token</th>
+                    <td>--</td>
+                  </tr>
+
+                  <tr>
+                    <th>company_name</th>
+                    <td>Sandbox Company_US_1</td>
+                  </tr>
+
+                  <tr>
+                    <th>user_sub</th>
+                    <td>--</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="quickbooks"
+            role="tabpanel"
+            aria-labelledby="quickbooks-tab"
+          >
+            <div class="card card-body">
+              <table>
+                <tbody>
+                  <tr>
+                    <th>User Id</th>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <th>Email</th>
+                    <td>murray@stokely.org</td>
+                  </tr>
+                  <tr>
+                    <th>Email Verified</th>
+                    <td>True</td>
+                  </tr>
+                  <tr>
+                    <th>First Name</th>
+                    <td>Murray</td>
+                  </tr>
+                  <tr>
+                    <th>Last Name</th>
+                    <td>Stokely</td>
+                  </tr>
+                  <tr>
+                    <th>Updated at</th>
+                    <td>Sept. 11, 2023, 8 p.m.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="bulk"
+            role="tabpanel"
+            aria-labelledby="bulk-tab"
+          >
+            <div class="card card-body">
+              <table>
+                <tbody>
+                  <tr>
+                    <th>Realm ID</th>
+                    <td>123145921411639</td>
+                  </tr>
+                  <tr>
+                    <th>Expires In</th>
+                    <td>None</td>
+                  </tr>
+                  <tr>
+                    <th>Refresh&nbsp;Token&nbsp;Expires&nbsp;In</th>
+                    <td>None</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div
+            class="tab-pane fade"
+            id="djangodebug"
+            role="tabpanel"
+            aria-labelledby="bulk-tab"
+          >
+            <div class="card card-body">
+              <pre>FOO</pre>
+            </div>
+          </div>
+        </div>
+        <hr />
+
+        <h1>Buttons</h1>
+
+        <button type="button" class="btn btn-primary">Primary</button>
+        <button type="button" class="btn btn-secondary">Secondary</button>
+        <button type="button" class="btn btn-success">Success</button>
+        <button type="button" class="btn btn-danger">Danger</button>
+        <button type="button" class="btn btn-warning">Warning</button>
+        <button type="button" class="btn btn-info">Info</button>
+        <button type="button" class="btn btn-light">Light</button>
+        <button type="button" class="btn btn-dark">Dark</button>
+        <button type="button" class="btn btn-link">Link</button>
+
+        <h1>Header Sizes</h1>
+
+        <h1>H1</h1>
+        <h2>H2</h2>
+        <h3>H3</h3>
+        <h4>H4</h4>
+        <h5>H5</h5>
+        <h6>H6</h6>
+
+        <h1>Hideable Form</h1>
+
+        <h2>Collapsed</h2>
+
+        Click here to add a new property
+
+        <h2>Expanded</h2>
+        <form hx-post="/rpt/properties/" hx-target="body" method="POST">
+          <div class="row my-2">
+            <label for="id_short_name" class="col-sm-2 col-form-label"
+              >Short name<span
+                class="material-symbols-outlined"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="This name is used for accounts and classes created in Quick Books Online for tracking this property."
+                >help</span
+              ></label
+            >
+            <div class="col-sm-4">
+              <input
+                type="text"
+                name="short_name"
+                maxlength="20"
+                class="form-control"
+                required
+                id="id_short_name"
+              />
+              <small class="text-danger"></small>
+            </div>
+            <label for="id_acquisition_date" class="col-sm-2 col-form-label"
+              >Acquisition date</label
+            >
+            <div class="col-md-4">
+              <input
+                type="date"
+                name="acquisition_date"
+                class="form-control"
+                placeholder="Pick a date"
+                type="date"
+                required
+                id="id_acquisition_date"
+              />
+              <small class="text-danger"></small>
+            </div>
+          </div>
+
+          <div class="row my-2">
+            <label for="id_description" class="col-sm-2 col-form-label"
+              >Full Address</label
+            >
+            <div class="col-sm-10">
+              <input
+                type="text"
+                name="description"
+                maxlength="256"
+                class="form-control flex-fill"
+                style="width: 100%"
+                required
+                id="id_description"
+              />
+            </div>
+            <small class="text-danger"></small>
+          </div>
+
+          <div class="row my-2">
+            <label for="id_purchase_price" class="col-sm-2 col-form-label"
+              >Purchase price</label
+            >
+            <div class="col-sm-3">
+              <input
+                type="number"
+                name="purchase_price"
+                value="0"
+                step="0.01"
+                class="form-control"
+                required
+                id="id_purchase_price"
+              />
+              <small class="text-danger"></small>
+            </div>
+
+            <label for="id_monthly_rent" class="col-sm-2 col-form-label"
+              >Monthly rent</label
+            >
+            <div class="col-sm-3">
+              <input
+                type="number"
+                name="monthly_rent"
+                value="0"
+                step="0.01"
+                class="form-control"
+                required
+                id="id_monthly_rent"
+              />
+              <small class="text-danger"></small>
+            </div>
+
+            <div class="col-sm-2 text-center">
+              <button
+                hx-post="/rpt/properties/"
+                hx-target="body"
+                type="submit"
+                class="btn btn-success"
+              >
+                Save
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <h1>Colors</h1>
+
+        <p class="text-primary">.text-primary</p>
+        <p class="text-secondary">.text-secondary</p>
+        <p class="text-success">.text-success</p>
+        <p class="text-danger">.text-danger</p>
+        <p class="text-warning">.text-warning</p>
+        <p class="text-info">.text-info</p>
+        <p class="text-light bg-dark">.text-light</p>
+        <p class="text-dark">.text-dark</p>
+        <p class="text-body">.text-body</p>
+        <p class="text-muted">.text-muted</p>
+        <p class="text-white bg-dark">.text-white</p>
+        <p class="text-black-50">.text-black-50</p>
+        <p class="text-white-50 bg-dark">.text-white-50</p>
+
+        <h2>Theme</h2>
+
+        <p class="ol">.text-primary</p>
+        <p class="od">.text-secondary</p>
+        <p class="bl">.text-success</p>
+        <p class="bd">.text-danger</p>
+        <p class="gl">.text-warning</p>
+        <p class="gd">.text-info</p>
+        <p class="rl">.text-light</p>
+        <p class="rd">.text-dark</p>
+        <p class="bg1">.text-body</p>
+        <p class="bg2">.text-muted</p>
+        <p class="bg3">.text-white</p>
+        <p class="bg4">.text-black-50</p>
+        <p class="bg5">.text-white-50</p>
+        <p class="bg6">.text-white-50</p>
+        <p class="bg7">.text-white-50</p>
+        <p class="bg8">.text-white-50</p>
+        <p class="bg9">.text-white-50</p>
+
+        <h1>BG Colors</h1>
+
+        <div class="p-3 mb-2 bg-primary text-white">.bg-primary</div>
+        <div class="p-3 mb-2 bg-secondary text-white">.bg-secondary</div>
+        <div class="p-3 mb-2 bg-success text-white">.bg-success</div>
+        <div class="p-3 mb-2 bg-danger text-white">.bg-danger</div>
+        <div class="p-3 mb-2 bg-warning text-dark">.bg-warning</div>
+        <div class="p-3 mb-2 bg-info text-white">.bg-info</div>
+        <div class="p-3 mb-2 bg-light text-dark">.bg-light</div>
+        <div class="p-3 mb-2 bg-dark text-white">.bg-dark</div>
+        <div class="p-3 mb-2 bg-white text-dark">.bg-white</div>
+        <div class="p-3 mb-2 bg-transparent text-dark">.bg-transparent</div>
+
+        <h2>Theme</h2>
+
+        <div class="p-3 mb-2 bg-ol">.bg-primary</div>
+        <div class="p-3 mb-2 bg-od">.bg-secondary</div>
+        <div class="p-3 mb-2 bg-bl">.bg-success</div>
+        <div class="p-3 mb-2 bg-bd">.bg-danger</div>
+        <div class="p-3 mb-2 bg-gl">.bg-warning</div>
+        <div class="p-3 mb-2 bg-gd">.bg-info</div>
+        <div class="p-3 mb-2 bg-rl">.bg-light</div>
+        <div class="p-3 mb-2 bg-rd">.bg-dark</div>
+        <div class="p-3 mb-2 bg-bg1">.bg-white</div>
+        <div class="p-3 mb-2 bg-bg2">.bg-transparent</div>
+        <div class="p-3 mb-2 bg-bg3">.bg-transparent</div>
+        <div class="p-3 mb-2 bg-bg4">.bg-transparent</div>
+        <div class="p-3 mb-2 bg-bg5">.bg-transparent</div>
+        <div class="p-3 mb-2 bg-bg6">.bg-transparent</div>
+        <div class="p-3 mb-2 bg-bg7">.bg-transparent</div>
+        <div class="p-3 mb-2 bg-bg8">.bg-transparent</div>
+        <div class="p-3 mb-2 bg-bg9">.bg-transparent</div>
+
+        <h1>Tables</h1>
+
+        Primary head
+
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead class="table-primary">
+              <tr>
+                <th>Example Col1</th>
+                <th>Example Col2</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Foo</td>
+                <td>Bar</td>
+              </tr>
+              <tr>
+                <td>Baz</td>
+                <td>Bar</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        Secondary head
+
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead class="table-secondary">
+              <tr>
+                <th>Example Col1</th>
+                <th>Example Col2</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Foo</td>
+                <td>Bar</td>
+              </tr>
+              <tr>
+                <td>Baz</td>
+                <td>Bar</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        Info head
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead class="table-info">
+              <tr>
+                <th>Example Col1</th>
+                <th>Example Col2</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Foo</td>
+                <td>Bar</td>
+              </tr>
+              <tr>
+                <td>Baz</td>
+                <td>Bar</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        Successs head
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead class="table-success">
+              <tr>
+                <th>Example Col1</th>
+                <th>Example Col2</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Foo</td>
+                <td>Bar</td>
+              </tr>
+              <tr>
+                <td>Baz</td>
+                <td>Bar</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h2>Another</h2>
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Another</h2>
+
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Another</h2>
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Another</h2>
+
+        <table class="table table-striped table-dark">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Another</h2>
+
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <footer class="my-md-5 border-top">
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="releaseNotes"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+        style="display: none"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="releaseNotesLabel">
+                Release Notes
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <h4>September 2023</h4>
+
+              <ul>
+                <li>
+                  Improved Loan Bill editing to allow overriding computed
+                  values.
+                </li>
+                <li>
+                  Improved Property Manager Monthly Statement Data Entry to be
+                  more spreadsheet-like.
+                </li>
+                <li>
+                  Added feature to create bulk depreciation journal entries for
+                  multiple properties.
+                </li>
+              </ul>
+
+              <h4>August 2023</h4>
+
+              <ul>
+                <li>Upgraded UI to Bootstrap 5.3.</li>
+                <li>Added Depreciation Feature</li>
+                <li>Added Rent &amp; Vacancy Tracker</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex">
+        <div class="p-2">
+          <img
+            class="mb-2"
+            src="./test2_files/RPTlogo.png"
+            alt="Rental Property Toolkit Logo"
+            width="24"
+            height="24"
+          />
+        </div>
+        <div class="p-2">
+          <small class="mb-3 text-muted">© 2020-2023</small>
+        </div>
+        <div class="p-2 flex-grow-1">
+          <small class="mb-3 text-muted">
+            <!-- <a href="#" class="badge badge-secondary">v202309.1
+</a> -->
+            <button
+              type="button"
+              class="badge badge-secondary"
+              data-bs-toggle="modal"
+              data-bs-target="#releaseNotes"
+            >
+              v202309.1
+            </button>
+          </small>
+        </div>
+        <div class="p-2" style="vertical-align: middle">
+          <small class="mb-3 text-muted" style="vertical-align: middle"
+            ><span class="material-symbols-outlined"> privacy_tip </span>Privacy
+            | <span class="material-symbols-outlined"> policy </span>Terms of
+            Service | <span class="material-symbols-outlined"> mail </span
+            ><a href="mailto:support@rentalpropertytoolkit.com"
+              >Contact</a
+            ></small
+          >
+        </div>
+      </div>
+    </footer>
+    <!-- Spinner Wrapper (initially hidden) -->
+    <div
+      class="preloader-wrapper"
+      role="status"
+      id="spinner"
+      style="display: none"
+    >
+      <div
+        class="spinner-border text-info spinnerCenter"
+        style="width: 3rem; height: 3rem"
+      >
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+
+    <script src="./js/main.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script> -->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.body.addEventListener("htmx:configRequest", (event) => {
+        event.detail.headers["X-CSRFToken"] =
+          "ct5dRDJ7VI3eDGDYgxHcKghmy9PblDS3urGy7fg17Fmpi5GNWFK1raJST94hIayG"; //insert csrf token when performing AJAX request
+      });
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
+  </body>
+</html>

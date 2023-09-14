@@ -1,0 +1,253 @@
+#topbar {
+    margin: auto;
+}
+
+#content {
+    margin: auto;
+    width: 80%;
+}
+
+#myTabContent {
+    border-radius: 0 10px 10px 10px;
+    border-style: none solid solid solid;
+    border-color: #dee2e6;
+    border-top: none;
+}
+
+div.tab-pane {
+    border-style: none;
+}
+div.tab-content div {
+    border-style: none;
+}
+
+#id_description {
+    width: 400px;
+}
+#loginbox {
+    margin-left: auto;
+    margin-right: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: max-content;
+    border: 1px solid black;
+    background-color: rgba(0,0,0,0.1);
+}
+
+thead.table-primary {
+    background-color: rgba(125,199,239,1.00);
+    color: white;
+}
+
+thead.thead-dark {
+    background-color: rgba(57,75,99,1.00);
+    color: white;
+}
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #f8f8f8;
+}
+
+main {
+    /* background-color: #ffffff; */
+}
+div.tab-content {
+    background-color: #ffffff;
+}
+
+p.ol {
+	color: rgba(231,130,51,1.00)
+}
+p.od {
+	color: rgba(214,113,34,1.00)
+}
+p.bl {
+	color: rgba(125,199,239,1.00)
+}
+p.bd {
+	color: rgba(73,157,205,1.00)
+}
+p.gl {
+	color:rgba(117,196,128,1.00)
+}
+p.gd {
+	color:rgba(67,155,81,1.00)
+}
+p.rl {
+	color:rgba(225,85,62,1.00)
+}
+p.rd {
+	color:rgba(203,52,33,1.00)
+}
+p.bg1 {
+	color:rgba(73,97,125,1.00)
+}
+p.bg2 {
+	color: rgba(32,55,82,1.00)
+}
+p.bg3 {
+	color:rgba(89,106,132,1.00)
+}
+p.bg4 {
+	color:rgba(140,155,175,1.00)
+}
+p.bg5 {
+	color:rgba(13,26,48,1.00)
+}
+p.bg6 {
+	color:rgba(29,42,67,1.00)
+}
+p.bg7{
+	color:rgba(100,110,131,1.00)
+}
+p.bg8 {
+	color:rgba(27,36,58,1.00)
+}
+p.bg9 {
+	color:rgba(76,80,100,1.00)
+}
+
+div.bg-ol {
+	background-color: rgba(231,130,51,1.00)
+}
+div.bg-od {
+	background-color: rgba(214,113,34,1.00)
+}
+div.bg-bl {
+	background-color: rgba(125,199,239,1.00)
+}
+div.bg-bd {
+	background-color: rgba(73,157,205,1.00)
+}
+div.bg-gl {
+	background-color:rgba(117,196,128,1.00)
+}
+div.bg-gd {
+	background-color:rgba(67,155,81,1.00)
+}
+div.bg-rl {
+	background-color:rgba(225,85,62,1.00)
+}
+div.bg-rd {
+	background-color:rgba(203,52,33,1.00)
+}
+div.bg-bg1 {
+	background-color:rgba(73,97,125,1.00)
+}
+div.bg-bg2 {
+	background-color: rgba(32,55,82,1.00)
+}
+div.bg-bg3 {
+	background-color:rgba(89,106,132,1.00)
+}
+div.bg-bg4 {
+	background-color:rgba(140,155,175,1.00)
+}
+div.bg-bg5 {
+	background-color:rgba(13,26,48,1.00)
+}
+div.bg-bg6 {
+	background-color:rgba(29,42,67,1.00)
+}
+div.bg-bg7{
+	background-color:rgba(100,110,131,1.00)
+}
+div.bg-bg8 {
+	background-color:rgba(27,36,58,1.00)
+}
+div.bg-bg9 {
+	background-color:rgba(76,80,100,1.00)
+}
+table tr:first-child th:first-child{
+  border-radius:10px 0 0 0;
+    border-top: 0;
+}
+
+table tr:first-child th:last-child{
+  border-radius:0 10px 0 0;
+    border-top: 0;
+}
+button.btn-success, button.btn-success:active, button.btn-success:visited {
+    background-color: rgba(117,196,128,1.00);
+}
+
+
+button.badge-secondary {
+    background-color: rgba(73,97,175,1.00);
+}
+
+hr.hr-text {
+  position: relative;
+    border: none;
+    height: 1px;
+    background: #999;
+}
+
+hr.hr-text::before {
+    content: attr(data-content);
+    display: inline-block;
+    background: #fff;
+    font-weight: bold;
+    font-size: 0.85rem;
+    color: #999;
+    border-radius: 30rem;
+    padding: 0.2rem 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+a {
+    color: rgba(73,97,175,1.00);
+}
+a:hover {
+    font-weight: 900;
+}
+
+button.btn-primary {
+    background-color: rgba(125,199,239,1.00);
+}
+
+button.btn-primary:hover {
+    background-color: rgba(125,199,239,1.00)
+}
+
+nav.navbar-rpt {
+    background-color: rgba(140,155,175,0.50);
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+}
+.text-rpt {
+    color: rgba(70,101,143,1.00);
+    }
+
+ul.nav-tabs>li>button {
+      background-color: #f8f8f8;
+}
+
+/* spinner css */
+
+.preloader-wrapper {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: #111111b2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .4s ease;
+}
+.spinnerCenter{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}
+.fade-out-animation {
+    opacity: 0;
+    visibility: hidden;
+}
